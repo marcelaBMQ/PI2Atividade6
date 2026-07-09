@@ -391,8 +391,7 @@ public class TelaVenda extends javax.swing.JFrame {
         List<CadastroVendas> lista =
         cadastroVendasService.listarVendaProduto(txtProduto.getText());
         
-        
-        preencherTabelaVendas(lista);
+         preencherTabelaVendas(lista);
          limparCampos(); 
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Erro ao listar produtos:\n" + e.getMessage());

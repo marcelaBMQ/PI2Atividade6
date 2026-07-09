@@ -4,9 +4,7 @@ package com.mycompany.gui;
 
 public class TelaMenu extends javax.swing.JFrame {
     
- //   private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaMenu.class.getName());
-
-       public TelaMenu() {
+        public TelaMenu() {
         initComponents();
        }
 

@@ -441,10 +441,7 @@ public class TelaCadastro extends javax.swing.JFrame {
        
        Fornecedor novoForn = new Fornecedor();
         try{
-          //para a descrição capturamos direto o valor do campo de texto
-        //  novoForn.setNomeFornecedor(txtNomeFornecedor.getText());
-        //  novoForn.setTelefone(txtTelefone.getText());
-    
+           
           //substituido na refatoracao - PI2 Ativ 6
           FornecedorService fornecedorService = new FornecedorService();
           fornecedorService.cadastrarFornecedor(novoForn);
@@ -511,8 +508,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     
     private void btnCadastrarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarProdActionPerformed
-        // TODO add your handling code here:
-        
+               
         Produto novoProd = new Produto();
         try{
           //para a descrição capturamos direto o valor do campo de texto
@@ -566,8 +562,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     
     
     private void btnListarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarProdActionPerformed
-        
-        try {
+                try {
             //substituido na refatoração - PI2 ativd 6
         ProdutoService produtoService = new ProdutoService();
         List<Produto> lista = produtoService.listarProdutos();
@@ -580,8 +575,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
 
     private void btnExcluirProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirProdActionPerformed
-       
-           try {
+                  try {
         int linhaSelecionada = tblProdutos.getSelectedRow();
 
         if (linhaSelecionada >= 0) {

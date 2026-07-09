@@ -8,12 +8,9 @@ import javax.swing.JOptionPane;
 
 public class TelaLogin extends javax.swing.JFrame {
     
-    //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaLogin.class.getName());
-    
     public TelaLogin() {
         initComponents();
     }
-
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

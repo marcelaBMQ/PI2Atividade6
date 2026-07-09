@@ -12,7 +12,6 @@ public class PI2ativ04 {
     
     public static void main(String[] args) {
          
-     //  EntityManagerFactory fabricaEntidade = Persistence.createEntityManagerFactory("Podcast-PU");
-      // EntityManager manager = fabricaEntidade.createEntityManager();
+     
     }
 }
