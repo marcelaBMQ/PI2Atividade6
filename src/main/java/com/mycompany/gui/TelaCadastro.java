@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import service.ProdutoService;
 
 
 
@@ -516,9 +517,11 @@ public class TelaCadastro extends javax.swing.JFrame {
           novoProd.setFabricante(txtFabricante.getText());
           novoProd.setFornecedor(txtFornecedor.getText());
        
-          ProdutoDAO produtoDAO = new ProdutoDAO();
-          produtoDAO.cadastrarProd(novoProd);
+          //substituido na refatoração - PI 2 ativ 6
+         ProdutoService produtoService = new ProdutoService();
+         produtoService.cadastrarProduto(novoProd);   
           
+         
           JOptionPane.showMessageDialog(
             this,
             "Produto cadastrado com sucesso!",

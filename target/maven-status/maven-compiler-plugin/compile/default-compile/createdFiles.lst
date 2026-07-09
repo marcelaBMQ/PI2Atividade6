@@ -1,6 +1,7 @@
 com\mycompany\gui\TelaCadastro$3.class
 com\mycompany\gui\TelaVenda$5.class
 com\mycompany\gui\TelaLogin$2.class
+service\ProdutoService.class
 com\mycompany\gui\TelaMenu$2.class
 com\mycompany\gui\TelaCadastro$5.class
 com\mycompany\gui\TelaCadastro$1.class
