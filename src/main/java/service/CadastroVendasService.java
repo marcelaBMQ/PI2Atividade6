@@ -1,7 +1,7 @@
 
 package service;
 
-import com.mycompany.persistencia.CadastroVendas;
+import model.CadastroVendas;
 import com.mycompany.persistencia.CadastroVendasDAO;
 import java.util.List;
 

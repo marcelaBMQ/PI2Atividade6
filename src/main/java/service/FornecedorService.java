@@ -1,6 +1,6 @@
 package service;
 
-import com.mycompany.persistencia.Fornecedor;
+import model.Fornecedor;
 import com.mycompany.persistencia.FornecedorDAO;
 import java.util.List;
 

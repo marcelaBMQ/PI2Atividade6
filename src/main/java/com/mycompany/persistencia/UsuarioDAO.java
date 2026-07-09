@@ -1,6 +1,7 @@
 
 package com.mycompany.persistencia;
 
+import model.Usuario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 

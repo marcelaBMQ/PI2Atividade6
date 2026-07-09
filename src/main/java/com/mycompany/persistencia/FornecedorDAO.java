@@ -1,6 +1,7 @@
  
 package com.mycompany.persistencia;
 
+import model.Fornecedor;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import java.util.ArrayList;

@@ -1,6 +1,7 @@
  
 package com.mycompany.persistencia;
 
+import model.CadastroVendas;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import java.time.LocalDate;

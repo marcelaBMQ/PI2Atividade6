@@ -1,9 +1,9 @@
 package com.mycompany.gui;
 
 
-import com.mycompany.persistencia.Fornecedor;
+import model.Fornecedor;
 import com.mycompany.persistencia.FornecedorDAO;
-import com.mycompany.persistencia.Produto;
+import model.Produto;
 import com.mycompany.persistencia.ProdutoDAO;
 import java.awt.event.ActionEvent;
 import java.util.List;
@@ -442,8 +442,8 @@ public class TelaCadastro extends javax.swing.JFrame {
        Fornecedor novoForn = new Fornecedor();
         try{
           //para a descrição capturamos direto o valor do campo de texto
-          novoForn.setNomeFornecedor(txtNomeFornecedor.getText());
-          novoForn.setTelefone(txtTelefone.getText());
+        //  novoForn.setNomeFornecedor(txtNomeFornecedor.getText());
+        //  novoForn.setTelefone(txtTelefone.getText());
     
           //substituido na refatoracao - PI2 Ativ 6
           FornecedorService fornecedorService = new FornecedorService();

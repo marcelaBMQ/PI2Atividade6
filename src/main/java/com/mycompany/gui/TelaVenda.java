@@ -1,6 +1,6 @@
 package com.mycompany.gui;
 
-import com.mycompany.persistencia.CadastroVendas;
+import model.CadastroVendas;
 import com.mycompany.persistencia.CadastroVendasDAO;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

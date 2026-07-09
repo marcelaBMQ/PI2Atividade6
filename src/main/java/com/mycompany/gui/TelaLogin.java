@@ -1,7 +1,7 @@
 
 package com.mycompany.gui;
 
-import com.mycompany.persistencia.Usuario;
+import model.Usuario;
 import com.mycompany.persistencia.UsuarioDAO;
 import javax.swing.JOptionPane;
 
