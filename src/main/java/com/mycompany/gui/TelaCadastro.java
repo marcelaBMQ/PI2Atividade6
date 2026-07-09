@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import service.FornecedorService;
 import service.ProdutoService;
 
 
@@ -444,8 +445,9 @@ public class TelaCadastro extends javax.swing.JFrame {
           novoForn.setNomeFornecedor(txtNomeFornecedor.getText());
           novoForn.setTelefone(txtTelefone.getText());
     
-          FornecedorDAO fornecedorDAO = new FornecedorDAO();
-          fornecedorDAO.cadastrarForn(novoForn);
+          //substituido na refatoracao - PI2 Ativ 6
+          FornecedorService fornecedorService = new FornecedorService();
+          fornecedorService.cadastrarFornecedor(novoForn);
           
           JOptionPane.showMessageDialog(
             this,
@@ -464,7 +466,6 @@ public class TelaCadastro extends javax.swing.JFrame {
         int linhaSelecionada = tblFornecedores.getSelectedRow();
 
         if (linhaSelecionada >= 0) {
-
             // PEGAR O ID  
             Integer id = (Integer) tblFornecedores.getValueAt(linhaSelecionada, 0);
 
@@ -475,8 +476,9 @@ public class TelaCadastro extends javax.swing.JFrame {
                 JOptionPane.YES_NO_OPTION);
 
             if (resposta == JOptionPane.YES_OPTION) {
-                FornecedorDAO fornecedorDAO = new FornecedorDAO();
-                fornecedorDAO.excluirForn(id);
+                //substituido na refatoracao - PI2 Ativ 6
+                FornecedorService fornecedorService = new FornecedorService();
+                fornecedorService.excluirFornecedor(id);
 
                 JOptionPane.showMessageDialog(this, "Registro excluído com sucesso!");
                 btnListarFornActionPerformed(evt); // atualiza a tabela
@@ -498,8 +500,9 @@ public class TelaCadastro extends javax.swing.JFrame {
          
         try {
         String filtro = txtNomeProd.getText().trim();
-        ProdutoDAO dao = new ProdutoDAO();
-        List<Produto> lista = dao.listarProd(filtro);
+        //substituido pela refatoração - PI2 - Ativ 6
+        ProdutoService produtoService = new ProdutoService();
+        List<Produto> lista = produtoService.buscarProdutos(filtro); 
         preencherTabelaProdutos(lista);
         } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Erro ao buscar produto:\n" + e.getMessage());
@@ -563,11 +566,13 @@ public class TelaCadastro extends javax.swing.JFrame {
     
     
     private void btnListarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarProdActionPerformed
-        // TODO add your handling code here:
+        
         try {
-        ProdutoDAO dao = new ProdutoDAO();
-        List<Produto> lista = dao.listarProd(""); // sem filtro
+            //substituido na refatoração - PI2 ativd 6
+        ProdutoService produtoService = new ProdutoService();
+        List<Produto> lista = produtoService.listarProdutos();
         preencherTabelaProdutos(lista);
+        
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Erro ao listar produtos:\n" + e.getMessage());
       } 
@@ -591,8 +596,9 @@ public class TelaCadastro extends javax.swing.JFrame {
                 JOptionPane.YES_NO_OPTION);
 
             if (resposta == JOptionPane.YES_OPTION) {
-                ProdutoDAO produtoDAO = new ProdutoDAO();
-                produtoDAO.excluirProd(id);
+                //substituido na refatoracao - PI 2 - ativ 6
+                ProdutoService produtoService = new ProdutoService();
+                produtoService.excluirProduto(id);
 
                 JOptionPane.showMessageDialog(this, "Registro excluído com sucesso!");
                 btnListarProdActionPerformed(evt); // atualiza a tabela
@@ -615,8 +621,9 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     private void btnListarFornActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarFornActionPerformed
          try {
-        FornecedorDAO dao = new FornecedorDAO();
-        List<Fornecedor> lista = dao.listarForn("");
+             //substituido na refatoracao - PI2 Ativ 6
+        FornecedorService fornecedorService = new FornecedorService();
+        List<Fornecedor> lista = fornecedorService.listarFornecedores();
         preencherTabelaFornecedores(lista);
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Erro ao listar fornecedores:\n" + e.getMessage());
@@ -626,8 +633,9 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void btnBuscarFornActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarFornActionPerformed
         try {
         String filtro = txtNomeFornecedor.getText().trim();
-        FornecedorDAO dao = new FornecedorDAO();
-        List<Fornecedor> lista = dao.listarForn(filtro);
+        //Substituido na refatoracao - PI2 - ativ 6
+        FornecedorService fornecedorService = new FornecedorService();
+        List<Fornecedor> lista = fornecedorService.buscarFornecedores(filtro);
         preencherTabelaFornecedores(lista);
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Erro ao buscar fornecedor:\n" + e.getMessage());

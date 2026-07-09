@@ -13,6 +13,7 @@ com\mycompany\persistencia\Fornecedor.class
 com\mycompany\gui\TelaVenda$7.class
 com\mycompany\gui\TelaCadastro$7.class
 com\mycompany\persistencia\UsuarioDAO.class
+service\CadastroVendasService.class
 com\mycompany\gui\TelaCadastro$9.class
 com\mycompany\persistencia\FornecedorDAO.class
 com\mycompany\gui\TelaVenda$6.class
@@ -30,6 +31,7 @@ com\mycompany\persistencia\JPAUtil.class
 com\mycompany\persistencia\ProdutoDAO.class
 com\mycompany\gui\TelaVenda$3.class
 com\mycompany\persistencia\CadastroVendas.class
+service\FornecedorService.class
 com\mycompany\gui\TelaVenda$1.class
 com\mycompany\gui\TelaVenda$8.class
 com\mycompany\pi2ativ04\PI2ativ04.class

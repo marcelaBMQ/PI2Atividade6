@@ -59,6 +59,10 @@ public class ProdutoDAO {
             JPAUtil.closeEtityManager(); //fechamos a conexao
         }
     }
+
+    //public List<Produto> listarProdutos() {
+       // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+   // }
     
     
 }

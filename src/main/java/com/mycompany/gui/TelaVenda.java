@@ -1,7 +1,5 @@
 package com.mycompany.gui;
 
- 
-
 import com.mycompany.persistencia.CadastroVendas;
 import com.mycompany.persistencia.CadastroVendasDAO;
 import java.time.LocalDate;
@@ -9,17 +7,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
-
+import service.CadastroVendasService;
 
 public class TelaVenda extends javax.swing.JFrame {
-
    
     public TelaVenda() {
         initComponents();
-
     }
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -317,8 +311,11 @@ public class TelaVenda extends javax.swing.JFrame {
     private void btnListarVendaDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarVendaDataActionPerformed
        
          try {
-        CadastroVendasDAO dao = new  CadastroVendasDAO();
-        List< CadastroVendas> lista = dao.listarVendaData(txtData.getText()); // sem filtro
+        //substituido na refatoracao - PI2 Ativ 6     
+        CadastroVendasService cadastroVendasService = new CadastroVendasService();
+        List<CadastroVendas> lista =
+        cadastroVendasService.listarVendaData(txtData.getText());    
+        
         preencherTabelaVendas(lista);
          limparCampos(); 
     } catch (Exception e) {
@@ -333,8 +330,10 @@ public class TelaVenda extends javax.swing.JFrame {
                 int id = (int) tblVendas.getValueAt(tblVendas.getSelectedRow(), 0);
                 int resposta = JOptionPane.showConfirmDialog(this, "Deseja excluir esse registro? ");
                 if (resposta == 0) {
-                    CadastroVendasDAO cadastroVendasDao = new CadastroVendasDAO();
-                    cadastroVendasDao.excluirVenda(id);
+                    
+                    //substituido na refatoracao - PI2 Ativ 6
+                    CadastroVendasService cadastroVendasService = new CadastroVendasService();
+                    cadastroVendasService.excluirVenda(id);
                     JOptionPane.showMessageDialog(this, "Registro Excluido com sucesso! ");                  
                 }
             }
@@ -356,8 +355,9 @@ public class TelaVenda extends javax.swing.JFrame {
           novaVenda.setData(data);
           novaVenda.setPlataforma(txtPlataforma.getText());
           
-          CadastroVendasDAO cadastroVendasDAO = new CadastroVendasDAO();
-          cadastroVendasDAO.cadastrarVenda(novaVenda);
+          //substituido na refatoracao - PI2 ativ 6
+          CadastroVendasService cadastroVendasService = new CadastroVendasService();
+          cadastroVendasService.cadastrarVenda(novaVenda);
           
           JOptionPane.showMessageDialog(
             this,
@@ -371,8 +371,11 @@ public class TelaVenda extends javax.swing.JFrame {
 
     private void btnListarVendaPlatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarVendaPlatActionPerformed
        try {
-        CadastroVendasDAO dao = new  CadastroVendasDAO();
-        List< CadastroVendas> lista = dao.listarVendaPlat(txtPlataforma.getText());  
+           //substituido na refatoração - PI2 Ativ 6
+        CadastroVendasService cadastroVendasService = new CadastroVendasService();
+        List<CadastroVendas> lista =
+        cadastroVendasService.listarVendaPlataforma(txtPlataforma.getText());  
+        
         preencherTabelaVendas(lista);
          limparCampos(); 
     } catch (Exception e) {
@@ -383,8 +386,12 @@ public class TelaVenda extends javax.swing.JFrame {
 
     private void btnListarVendaProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarVendaProdActionPerformed
     try {
-        CadastroVendasDAO dao = new  CadastroVendasDAO();
-        List< CadastroVendas> lista = dao.listarVendaProd(txtProduto.getText()); // sem filtro
+        //substituido refatoracao - PI2 ativ 6
+        CadastroVendasService cadastroVendasService = new CadastroVendasService();
+        List<CadastroVendas> lista =
+        cadastroVendasService.listarVendaProduto(txtProduto.getText());
+        
+        
         preencherTabelaVendas(lista);
          limparCampos(); 
     } catch (Exception e) {
@@ -395,8 +402,10 @@ public class TelaVenda extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     try {
-        CadastroVendasDAO dao = new CadastroVendasDAO();
-        List<CadastroVendas> lista = dao.listarTodasVendas();
+        //substituido refatoracao - PI2 ativ 6
+        CadastroVendasService cadastroVendasService = new CadastroVendasService();
+        List<CadastroVendas> lista = cadastroVendasService.listarTodasVendas();
+        
         preencherTabelaVendas(lista);
     } catch (Exception e) {
         JOptionPane.showMessageDialog(
