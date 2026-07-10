@@ -11,7 +11,7 @@ import service.ProdutoService;
 
 public class PI2ativ04 {
 
-    
+    //aplicação de teste para validar funcionamento - PI2 ativ 6
     public static void main(String[] args) {
          ProdutoService service = new ProdutoService();
 

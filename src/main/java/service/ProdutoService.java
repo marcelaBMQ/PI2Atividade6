@@ -25,4 +25,9 @@ public class ProdutoService {
        return produtoDAO.listarProd(filtro);
     }
     
-}
+    //criado para realização do teste - PI 2 Ativ 7
+    public boolean nomeProdutoValido(String nome) {
+    return nome != null && !nome.trim().isEmpty();
+    }
+    
+ }
